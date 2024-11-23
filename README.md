@@ -9,3 +9,5 @@ Niniejszy projekt zawiera opisy i przykłady następujących wzorców projektowy
 3. Metoda wytwórcza (Factory Method)
 
 <!-- ## II.  -->
+
+    TODO podmienić kod metody wytwórczej oraz fabryki, dopisać test dla metody wytwórczej.

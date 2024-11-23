@@ -22,4 +22,11 @@ class VehicleFactoryTest extends TestCase
 
         $this->assertEquals('TIR', $truck->displayInfo());
     }
+
+    public function testWrongVehicleType(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Nieznany typ samochodu');
+        $unknown = VehicleFactory::createVehicle('unknown');
+    }
 }

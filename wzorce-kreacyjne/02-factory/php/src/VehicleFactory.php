@@ -14,7 +14,7 @@ class VehicleFactory
         } elseif ($type === 'truck') {
             return new Truck();
         } else {
-            throw new InvalidArgumentException("Nieznany typ samochodu");
+            throw new InvalidArgumentException('Nieznany typ samochodu');
         }
     }
 }
