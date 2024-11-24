@@ -1,5 +1,5 @@
 import unittest
-from src.factory import CarFactory, TruckFactory
+from src.factory_method import CarFactory, TruckFactory
 
 
 class TestFactory(unittest.TestCase):

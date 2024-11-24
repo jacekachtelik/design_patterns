@@ -16,12 +16,12 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
     def display_info(self):
-        return f"Samochód model {self.model}"
+        return f"Samochód model: {self.model}"
 
 
 class Bike(Vehicle):
     def display_info(self):
-        return f"Rower model {self.model}"
+        return f"Rower model: {self.model}"
 
 
 class VehicleFactory(ABC):
@@ -52,8 +52,8 @@ class VehicleCreator:
         return factory.create_vehicle(model)
 
 
-car = VehicleCreator.create_vehicle("car", "sedan")
-bike = VehicleCreator.create_vehicle("bike", "mountain")
+car = VehicleCreator().create_vehicle("car", "sedan")
+bike = VehicleCreator().create_vehicle("bike", "mountain")
 
 print(car.display_info())
 print(bike.display_info())
