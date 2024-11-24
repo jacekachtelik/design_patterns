@@ -3,6 +3,8 @@
 namespace App;
 
 use InvalidArgumentException;
+use App\HouseFactory;
+use App\OfficeFactory;
 
 class Factory
 {
@@ -28,3 +30,8 @@ class Factory
         return $factory->createBuilding();
     }
 }
+
+
+$factory = new Factory();
+$house = $factory->createBuilding('house');
+print(sprintf("Dom z: %s", $house->displayInfo()));

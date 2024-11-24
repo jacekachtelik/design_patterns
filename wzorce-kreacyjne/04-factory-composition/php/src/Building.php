@@ -15,6 +15,15 @@ class Building
 
     public function displayInfo()
     {
-        return implode(', ', $this->components);
+        if (!empty($this->components)) {
+            $infos = [];
+            foreach ($this->components as $component) {
+                if ($component instanceof BuildingComponent) {
+                    $infos[] = $component->displayInfo();
+                }
+            }
+            return implode(', ', $infos);
+        }
+        return 'Brak zdefiniowanych komponentów';
     }
 }
