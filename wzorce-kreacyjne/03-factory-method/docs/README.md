@@ -108,3 +108,115 @@ $cat = $catFactory->createAnimal();
 echo $cat->speak();  // Wyjście: Meow!
 
 ```
+
+## Przykładowe zastosowania:
+
+- **Systemy logowania**: Różne systemy logowania mogą wymagać różnych mechanizmów uwierzytelniania (np. LDAP, OAuth, bazy danych). Metoda wytwórcza pozwala na dynamiczne wybieranie odpowiedniego mechanizmu uwierzytelniania.
+
+- **Tworzenie dokumentów**: W zależności od formatu dokumentu (PDF, Word, Excel), fabryka może dynamicznie tworzyć odpowiedni typ dokumentu.
+
+- **Silniki gier**: W zależności od typu gry, mogą być tworzone różne typy postaci lub przeciwników przy użyciu metody wytwórczej.
+
+- **Aplikacje e-commerce**: Różne metody płatności (karta kredytowa, PayPal, przelew bankowy) mogą być dynamicznie tworzone w zależności od wyboru użytkownika.
+
+### PHP
+```PHP
+// Abstrakcyjna klasa Produktu
+abstract class Product {
+    abstract public function description();
+}
+
+// Konkretne klasy Produktu
+class Book extends Product {
+    public function description() {
+        echo "This is a book.\n";
+    }
+}
+
+class Electronics extends Product {
+    public function description() {
+        echo "This is an electronic device.\n";
+    }
+}
+
+// Abstrakcyjna klasa Fabryki
+abstract class ProductFactory {
+    abstract protected function factoryMethod();
+
+    public function createProduct() {
+        $product = $this->factoryMethod();
+        return $product;
+    }
+}
+
+// Konkretne klasy Fabryki
+class BookFactory extends ProductFactory {
+    protected function factoryMethod() {
+        return new Book();
+    }
+}
+
+class ElectronicsFactory extends ProductFactory {
+    protected function factoryMethod() {
+        return new Electronics();
+    }
+}
+
+// Klasa klienta
+$bookFactory = new BookFactory();
+$book = $bookFactory->createProduct();
+$book->description();
+
+$electronicsFactory = new ElectronicsFactory();
+$electronics = $electronicsFactory->createProduct();
+$electronics->description();
+```
+
+### Python
+
+```python
+from abc import ABC, abstractmethod
+
+# Abstrakcyjna klasa Produktu
+class Product(ABC):
+    @abstractmethod
+    def description(self):
+        pass
+
+# Konkretne klasy Produktu
+class Book(Product):
+    def description(self):
+        print("This is a book.")
+
+class Electronics(Product):
+    def description(self):
+        print("This is an electronic device.")
+
+# Abstrakcyjna klasa Fabryki
+class ProductFactory(ABC):
+    @abstractmethod
+    def factory_method(self):
+        pass
+
+    def create_product(self):
+        product = self.factory_method()
+        return product
+
+# Konkretne klasy Fabryki
+class BookFactory(ProductFactory):
+    def factory_method(self):
+        return Book()
+
+class ElectronicsFactory(ProductFactory):
+    def factory_method(self):
+        return Electronics()
+
+# Klasa klienta
+book_factory = BookFactory()
+book = book_factory.create_product()
+book.description()
+
+electronics_factory = ElectronicsFactory()
+electronics = electronics_factory.create_product()
+electronics.description()
+```
