@@ -171,3 +171,5 @@ book.description()
 electronics = factory.create_product("electronics")
 electronics.description()
 ```
+
+W obu przykładach, klasa ```ProductFactory``` tworzy różne produkty (książki i elektronika) na podstawie podanego typu. Dzięki temu kod jest bardziej elastyczny i łatwiejszy do rozszerzenia.
