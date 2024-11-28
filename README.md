@@ -7,7 +7,11 @@ Niniejszy projekt zawiera opisy i przykłady następujących wzorców projektowy
 1. Singleton
 2. Fabryka (Factory)
 3. Metoda wytwórcza (Factory Method)
+4. Fabryka z kompozycją (Factory with composition)
+5. Fabryka abstrakcyjna (Abstract factory)
+6. Budowniczy (Builder)
+7. Prototyp (Prototype)
 
 <!-- ## II.  -->
 
-    TODO podmienić kod metody wytwórczej oraz fabryki, dopisać test dla metody wytwórczej.
+    
