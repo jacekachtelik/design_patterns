@@ -12,6 +12,9 @@ Niniejszy projekt zawiera opisy i przykłady następujących wzorców projektowy
 6. Budowniczy (Builder)
 7. Prototyp (Prototype)
 
-<!-- ## II.  -->
+## II. Wzorce strukturalne
+
+1. Adapter
+2. Most (Bridge)
 
     
