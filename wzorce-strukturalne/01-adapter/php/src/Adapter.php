@@ -2,19 +2,21 @@
 
 namespace App;
 
+/**
+ * Adapter implementujący interfejs standardowy, który przyjmuje klasę niekompatybilną i zwraca dane w postaci kompatybilnej.
+ */
 class Adapter implements Target
 {
 
-    private $adaptee;
+    private Adaptee $adaptee;
 
     public function __construct(Adaptee $adaptee)
     {
         $this->adaptee = $adaptee;
     }
 
-    public function request()
+    public function request(): string
     {
-
-        $this->adaptee->specificRequest();
+        return $this->adaptee->specificRequest();
     }
 }
